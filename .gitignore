@@ -1,0 +1,9 @@
+# pas de fichier .a
+#*.a
+# mais suivre lib.a malgré la règle précédente
+#!#lib.a
+# ignorer uniquement le fichier TODO à la racine du projet
+
+# ignorer tous les fichiers dans le répertoire build
+qcm.xml
+launch.json
