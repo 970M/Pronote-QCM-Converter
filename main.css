@@ -44,8 +44,6 @@ li {
 }
 
 .exemple {
-    --bg: var(--black);
-    --fontColor: var(--white);
 }
 
 .txt-zone {
@@ -54,5 +52,5 @@ li {
     height: 356px;
 }
 
-  .btn:focus { outline-style: none; }
+.btn:focus { outline-style: none; }
 

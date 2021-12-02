@@ -10,12 +10,25 @@
 
     multichoice   
     1. La 1ere question à pour réponses :   
+    Plusieurs réponses possibles
     A. Celle-ci   
     B. Mais pas celle-ci   
     C. Celle-la   
     D. Ou encore celle-la   
     E. Ni celle-la   
     answer:A,C,D   
+
+
+## Version
+
+__V1.1.0 :__
+Amélioration du taitement. 
+Moins sensible au fin de ligne.
+Factorisation du code. 
+Gestion des sauts de ligne dans les questions.
+Prise en compte du titre du QCM.
+Gestion du nombre de réponse possible.
+
 
 ##### TBD : 
 
