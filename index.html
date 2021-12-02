@@ -9,20 +9,55 @@
 
 <body class="light-theme">
     <h1>Convertisseur</h1>
-    
-    <div >
-        <p>Collez le QCM au format texte à convertir :</p>
-        <textarea id="md-input" name="md_input"></textarea>
-        <br>
-        <input id="b-convert" type="button" name="convert" value="Convertir">
-    </div>
-    
     <div>
-        <p>Copier le QCM généré au format xml :</p>
-        <textarea id="xml-output" name="xml_output"></textarea>
-
+        <h1>Pronote_QCM_Converter</h1>
+        <h3>Convertiseur de QCM au format XML moodle pour import dans PRONOTE</h3>
+        <div>
+            <h2>1- Collez le QCM au format texte à convertir :</h2>
+            <textarea class='txt-zone' id="md-input" name="md_input"></textarea>
+            <br>
+            <input id="b-convert" type="button" name="convert" value="Convertir">
+        </div>
+        <div>
+            <h2>2- Copier le QCM généré au format xml :</h2>
+            <textarea class='txt-zone' id="xml-output" name="xml_output"></textarea>
+        </div>
     </div>
- 
+    <br>
+    <div>
+        <h3>Description</h2>
+            <p>Génère le QCM au format xml à partir du format texte suivant :</p>
+            <div class="exemple">
+                <p>
+                    description<br>
+                    Une description qui peut inclure des<br>
+                    saut à la ligne<br>
+                    <br>
+                    multichoice<br>
+                    1. La 1ere question à pour réponses :<br>
+                    A. Celle-ci<br>
+                    B. Mais pas celle-ci<br>
+                    C. Celle-la<br>
+                    D. Ou encore celle-la<br>
+                    E. Ni cell-la<br>
+                    answer:A,C,D<br>
+                </p>
+            </div>
+            <p>
+                <br>
+                TBD :<br>
+                <br>
+                1. Implémenter les types truefalse :<br>
+                <br>
+                truefalse<br>
+                2. Si un utilisateur le demande, PrivateRun doit lui fournir toutes les données qu'il possède sur lui,
+                dans un format compréhensible.<br>
+                answer: True<br>
+            </p>
+    </div>
+
+
+
     <script src="app.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>

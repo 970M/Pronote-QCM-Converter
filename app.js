@@ -17,7 +17,7 @@ B. Le numéro de version du logiciel installé sur la montre.
 C. Le nom et le prénom de l'utilisateur.S
 D. La date de naissance de l'utilisateur.
 E. Le type de navigateur (Firefox, Chrome, Internet Explorer...) utilisé pour se connecter au site web de PrivateRun.
-Answer:A,C,D
+answer:A,C,D
 
 truefalse
 2. Si un utilisateur le demande, PrivateRun doit lui fournir toutes les données qu'il possède sur lui, dans un format compréhensible.
@@ -51,42 +51,16 @@ var answer = {
 // FONCTIONS
 //////////////////////////////////////////////////////////////////////
 
-// Initialiser le bloc xml de la nouvelle section et l'ajouter au xml résultat
-function sectionChangeInit(sectionName) {
-    
-    // if (sectionName == 'description') {
-
-    //     outputXmlMsg = outputXmlMsg + descritionHeaderTpl.replace('{CATEGORY}', 'description')
-
-
-    // } else if (sectionName == 'multichoice') {
-
-    //     outputXmlMsg = outputXmlMsg + questionTplStart.replace('{CATEGORY}', 'multichoice')
-        
-    // } else if (sectionName == 'truefalse') {
-
-    //     outputXmlMsg = outputXmlMsg + questionTplStart.replace('{CATEGORY}', 'truefalse')
-        
-    // } 
-    
-    // else {
-
-    //     outputXmlMsg = '<?xml version="1.0" ?> <quiz>'
-    // }
-    
-}
-
 // Contruire le bloc xml de la section courante et l'ajouter au xml résultat
 function sectionBuilder(sectionName,curLine) {
 
     if (sectionName == 'description') {
         
         question['txt'] = question['txt'] + '\n' + curLine 
-    
 
     } else if (sectionName == 'multichoice') {
 
-        if (!curLine.startsWith('Answer:')) {
+        if (!curLine.startsWith('answer:')) {
             
             var lineTab = curLine.split('.')
 
@@ -134,7 +108,7 @@ function closePrevSection(sectionName) {
         
         outputXmlMsg = outputXmlMsg + questionHeaderTpl
             .replace('{TITLE}', 'Question n°' + question['id'])
-            .replace('{USECASE}', question['txt'] )
+            .replace('{QUESTION}', question['txt'] )
             .replace('{USECASE}', '1')
             .replace('{GRADE}', '2')
             .replace('{EDI}', '0')
@@ -185,26 +159,19 @@ document.getElementById('b-convert').addEventListener("click", function mdConver
             // Finaliser le précédent bloc xml et l'ajouter au xml résultat
             closePrevSection(curSectionName)
             curSectionName = 'description'
-            // Initialiser le xml de la nouvelle section
-            //sectionChangeInit(curSectionName)
         } // Initialiser suite à detection de section multichoice
         else if (inputTab[i].startsWith('multichoice')) {
             // Finaliser le précédent bloc xml et l'ajouter au xml résultat
             closePrevSection(curSectionName)
             curSectionName = 'multichoice'
-            // Initialiser le xml de la nouvelle section
-            //sectionChangeInit(curSectionName)
         } // Initialiser suite à detection de section truefalse
         else if (inputTab[i].startsWith('truefalse')) {
             
             // Finaliser le précédent bloc xml et l'ajouter au xml résultat
             closePrevSection(curSectionName)
             curSectionName = 'truefalse'
-            // Initialiser le xml de la nouvelle section
-            //sectionChangeInit(curSectionName)
         } // Traitement générique
         else {
-
             sectionBuilder(curSectionName,inputTab[i])
         }
     }
