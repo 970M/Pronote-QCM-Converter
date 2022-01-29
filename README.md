@@ -34,9 +34,9 @@ Gestion du nombre de réponse possible.
 
 __1.__ Implémenter les types truefalse :   
    
-truefalse   
-2. Si un utilisateur le demande, PrivateRun doit lui fournir toutes les données qu'il possède sur lui, dans un format compréhensible.   
-answer: True   
+    truefalse   
+    2. Si un utilisateur le demande, PrivateRun doit lui fournir toutes les données qu'il possède sur lui, dans un format compréhensible.   
+    answer: True   
    
 __2.__ La section description n'est pas affichée dans pronote (pronote le veut-il?) 
 
